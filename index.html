@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags for SEO and PWA -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pruthviraj's Modern Portfolio - Full Stack Developer showcasing projects and expertise in React, Node.js, and MongoDB." />
+    <meta name="keywords" content="Full Stack Developer, React, Node.js, MongoDB, JavaScript, Web Development" />
+    <meta name="author" content="Pruthviraj" />
+    <meta name="theme-color" content="#007bff" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta property="og:title" content="Pruthviraj | Full Stack Developer Portfolio" />
+    <meta property="og:description" content="Explore my projects and experience in modern web development" />
+    <meta property="og:type" content="website" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23007bff'>P</text></svg>" />
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%23007bff' width='180' height='180' rx='40'/><text x='50%' y='50%' font-size='100' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'>P</text></svg>" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVJkEZSMUkrQ6usKu8ztkf7fgYV5mWkzWLfsNSt+9r2UlCCp1y34yAQj6lWVj3dA2nK25U68YoRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Pruthviraj | Full Stack Developer Portfolio</title>
+  </head>
+
+  <body>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+      <div class="navbar__container">
+        <div class="navbar__logo">
+          <span class="logo-text">Pruthviraj Desai</span>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <ul class="navbar__menu" id="navMenu">
+          <li class="navbar__item"><a href="#home" class="navbar__link">Home</a></li>
+          <li class="navbar__item"><a href="#about" class="navbar__link">About</a></li>
+          <li class="navbar__item"><a href="#projects" class="navbar__link">Projects</a></li>
+          <li class="navbar__item"><a href="#experience" class="navbar__link">Experience</a></li>
+          <li class="navbar__item"><a href="#ncc" class="navbar__link">NCC</a></li>
+          <li class="navbar__item"><a href="#contact" class="navbar__link">Contact</a></li>
+        </ul>
+
+        <!-- Theme Switcher -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section with Particle Background -->
+    <section id="home" class="hero" role="region" aria-label="Hero section">
+      <div class="particle-container" id="particleContainer"></div>
+
+      <div class="hero__content">
+        <div class="hero__text">
+        <h1 class="hero__title" role="heading" aria-level="1">
+          <span class="typed-text" id="typedText">Hello, I'm Pruthviraj Desai</span>
+        </h1>
+
+        <p class="hero__subtitle">
+          Computer Science Engineer | Full Stack Developer
+        </p>
+
+        <p class="hero__description">
+          A passionate Full Stack Developer with strong foundations in Java, Python, and modern web technologies. Specialized in React, Node.js, and MongoDB with expertise in building interactive web applications and demonstrating core programming concepts through real-world projects.
+        </p>
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary" role="button">View My Work</a>
+          <a href="#contact" class="btn btn--outline" role="button">Get In Touch</a>
+          <a href="https://drive.google.com/uc?export=download&id=156TFK6Fw8dYDSRQA3tZFSb2C9AHUje2u" class="btn btn--secondary" role="button" download>
+            <i class="fas fa-download"></i> Download Resume
+          </a>
+        </div>
+
+          <!-- Social Links -->
+          <div class="hero__socials">
+            <a href="https://github.com/PruthviDev-7" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/pruthviraj-desai" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com/pruthvidesai" class="social-link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" aria-hidden="true">
+          <span class="scroll-indicator__text">Scroll</span>
+          <div class="scroll-indicator__mouse">
+            <div class="scroll-indicator__wheel"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about" role="region" aria-label="About section">
+      <div class="container">
+        <h2 class="section__title">About Me</h2>
+
+        <div class="about__content">
+          <!-- Profile Photo -->
+          <div class="about__photo">
+            <img src="Img/Pruthi.jpg.JPEG" alt="Pruthviraj Desai" class="profile-img" />
+          </div>
+
+          <div class="about__text fade-in">
+            <p>
+              I'm a Computer Science Engineer with a strong passion for creating beautiful, functional web applications. With comprehensive experience in modern JavaScript frameworks, backend technologies, and OOP concepts, I bring ideas to life with clean, efficient code and attention to detail.
+            </p>
+
+            <p>
+              My journey in software development is driven by curiosity and continuous learning. From building console-based applications in Python to developing full-stack web solutions with React and Node.js, I've acquired diverse skill sets that enable me to solve complex problems and deliver exceptional user experiences.
+            </p>
+
+            <p>
+              When I'm not coding, you can find me exploring emerging technologies, contributing to open-source projects, or mentoring fellow developers. I'm currently pursuing my B.Tech in Computer Science Engineering from Sharad Institute of Technology College of Engineering.
+            </p>
+          </div>
+
+          <!-- Skills Matrix -->
+          <div class="skills-matrix">
+            <div class="skill-card fade-in">
+              <div class="skill-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h3>Frontend</h3>
+              <p>HTML5, CSS3, JavaScript (ES6+), React.js, Bootstrap, Responsive Design</p>
+            </div>
+
+            <div class="skill-card fade-in">
+              <div class="skill-icon">
+                <i class="fas fa-server"></i>
+              </div>
+              <h3>Backend</h3>
+              <p>Node.js, Express.js, RESTful APIs, CRUD Operations, API Integration</p>
+            </div>
+
+            <div class="skill-card fade-in">
+              <div class="skill-icon">
+                <i class="fas fa-database"></i>
+              </div>
+              <h3>Database</h3>
+              <p>MongoDB, MySQL, Data Modeling, Query Optimization, Data Persistence</p>
+            </div>
+
+            <div class="skill-card fade-in">
+              <div class="skill-icon">
+                <i class="fas fa-code-branch"></i>
+              </div>
+              <h3>Programming</h3>
+              <p>Java, Python, JavaScript, OOP, Encapsulation, Inheritance, Polymorphism</p>
+            </div>
+
+            <div class="skill-card fade-in">
+              <div class="skill-icon">
+                <i class="fas fa-tools"></i>
+              </div>
+              <h3>Tools & DevOps</h3>
+              <p>Git, GitHub, VS Code, Postman, Web Performance, Console Applications</p>
+            </div>
+
+            <div class="skill-card fade-in">
+              <div class="skill-icon">
+                <i class="fas fa-cloud"></i>
+              </div>
+              <h3>Cloud & Other</h3>
+              <p>Oracle Cloud Infrastructure, Bootstrap Framework, Font Awesome, Web Design</p>
+            </div>
+          </div>
+
+          <!-- Progress Bars -->
+          <div class="progress-section">
+            <h3 class="progress-section__title">Technical Proficiency</h3>
+            <div class="progress-bars">
+              <div class="progress-item fade-in">
+                <label for="prog-react">React & JavaScript (ES6+)</label>
+                <div class="progress-bar">
+                  <div class="progress-bar__fill" id="prog-react" style="--percentage: 90%"></div>
+                </div>
+                <span class="progress-value">90%</span>
+              </div>
+
+              <div class="progress-item fade-in">
+                <label for="prog-node">Node.js & Express</label>
+                <div class="progress-bar">
+                  <div class="progress-bar__fill" id="prog-node" style="--percentage: 85%"></div>
+                </div>
+                <span class="progress-value">85%</span>
+              </div>
+
+              <div class="progress-item fade-in">
+                <label for="prog-db">MongoDB & MySQL</label>
+                <div class="progress-bar">
+                  <div class="progress-bar__fill" id="prog-db" style="--percentage: 80%"></div>
+                </div>
+                <span class="progress-value">80%</span>
+              </div>
+
+              <div class="progress-item fade-in">
+                <label for="prog-python">Python & Java (OOP)</label>
+                <div class="progress-bar">
+                  <div class="progress-bar__fill" id="prog-python" style="--percentage: 85%"></div>
+                </div>
+                <span class="progress-value">85%</span>
+              </div>
+
+              <div class="progress-item fade-in">
+                <label for="prog-responsive">HTML5 & CSS3 (Responsive)</label>
+                <div class="progress-bar">
+                  <div class="progress-bar__fill" id="prog-responsive" style="--percentage: 95%"></div>
+                </div>
+                <span class="progress-value">95%</span>
+              </div>
+
+              <div class="progress-item fade-in">
+                <label for="prog-git">Git & GitHub</label>
+                <div class="progress-bar">
+                  <div class="progress-bar__fill" id="prog-git" style="--percentage: 88%"></div>
+                </div>
+                <span class="progress-value">88%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects" role="region" aria-label="Projects section">
+      <div class="container">
+        <h2 class="section__title">Featured Projects</h2>
+
+        <!-- Project Filters -->
+        <div class="projects__filters" role="tablist">
+          <button class="filter-btn filter-btn--active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-btn" data-filter="fullstack" role="tab" aria-selected="false">Full Stack</button>
+          <button class="filter-btn" data-filter="frontend" role="tab" aria-selected="false">Frontend</button>
+          <button class="filter-btn" data-filter="python" role="tab" aria-selected="false">Python/Java</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects__grid">
+          <!-- Project 1: PizzaHub -->
+          <article class="project-card fade-in" data-category="fullstack">
+            <div class="project-card__image-wrapper">
+              <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF6B6B;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF8E72;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='250' fill='url(%23grad1)'/%3E%3Ctext x='200' y='125' font-size='48' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'%3E🍕 PizzaHub%3C/text%3E%3C/svg%3E"
+                alt="PizzaHub project screenshot"
+                class="project-card__image"
+                loading="lazy"
+              />
+              <div class="project-card__overlay">
+                <button class="btn btn--icon" aria-label="View PizzaHub project details" data-project="pizzahub">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="project-card__content">
+              <h3 class="project-card__title">PizzaHub</h3>
+              <p class="project-card__description">
+                Full-stack pizza ordering web application with user authentication, dynamic menu display, cart management, and RESTful APIs for order handling and data storage.
+              </p>
+
+              <div class="project-card__tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Express</span>
+              </div>
+
+              <div class="project-card__links">
+                <a href="https://github.com/PruthviDev-7" class="link-btn" aria-label="View live PizzaHub">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Temperature Converter -->
+          <article class="project-card fade-in" data-category="frontend">
+            <div class="project-card__image-wrapper">
+              <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Cdefs%3E%3ClinearGradient id='grad2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234ECDC4;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%2344A08D;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='250' fill='url(%23grad2)'/%3E%3Ctext x='200' y='125' font-size='48' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'%3E🌡️ Temp Converter%3C/text%3E%3C/svg%3E"
+                alt="Temperature Converter project screenshot"
+                class="project-card__image"
+                loading="lazy"
+              />
+              <div class="project-card__overlay">
+                <button class="btn btn--icon" aria-label="View Temperature Converter project details" data-project="tempconverter">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="project-card__content">
+              <h3 class="project-card__title">Temperature Converter</h3>
+              <p class="project-card__description">
+                Responsive and interactive web app to convert temperatures between Celsius, Fahrenheit, and Kelvin with animated UI, real-time conversions and modern design.
+              </p>
+
+              <div class="project-card__tech">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+
+              <div class="project-card__links">
+                <a href="https://github.com/PruthviDev-7" class="link-btn" aria-label="View Temperature Converter source code">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Spotify Clone -->
+          <article class="project-card fade-in" data-category="frontend">
+            <div class="project-card__image-wrapper">
+              <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Cdefs%3E%3ClinearGradient id='grad3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%231DB954;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%231ed760;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='250' fill='url(%23grad3)'/%3E%3Ctext x='200' y='125' font-size='48' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'%3E🎵 Spotify Clone%3C/text%3E%3C/svg%3E"
+                alt="Spotify Clone project screenshot"
+                class="project-card__image"
+                loading="lazy"
+              />
+              <div class="project-card__overlay">
+                <button class="btn btn--icon" aria-label="View Spotify Clone project details" data-project="spotifyclone">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="project-card__content">
+              <h3 class="project-card__title">Spotify Clone</h3>
+              <p class="project-card__description">
+                Responsive frontend clone of Spotify featuring sidebar navigation, playlist sections, album cards, and functional music player UI with modern design elements.
+              </p>
+
+              <div class="project-card__tech">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">Font Awesome</span>
+              </div>
+
+              <div class="project-card__links">
+                <a href="https://github.com/PruthviDev-7" class="link-btn" aria-label="View Spotify Clone source code">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Bank Application -->
+          <article class="project-card fade-in" data-category="python">
+            <div class="project-card__image-wrapper">
+              <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Cdefs%3E%3ClinearGradient id='grad4' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='250' fill='url(%23grad4)'/%3E%3Ctext x='200' y='125' font-size='48' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'%3E🏦 Bank App%3C/text%3E%3C/svg%3E"
+                alt="Bank Application project screenshot"
+                class="project-card__image"
+                loading="lazy"
+              />
+              <div class="project-card__overlay">
+                <button class="btn btn--icon" aria-label="View Bank Application project details" data-project="bankapp">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="project-card__content">
+              <h3 class="project-card__title">Bank Application</h3>
+              <p class="project-card__description">
+                Console-based banking system managing customers, employees, and accounts with support for deposits, withdrawals, and data persistence demonstrating OOP principles.
+              </p>
+
+              <div class="project-card__tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">OOP</span>
+                <span class="tech-tag">Pickle</span>
+              </div>
+
+              <div class="project-card__links">
+                <a href="https://github.com/PruthviDev-7" class="link-btn" aria-label="View Bank Application source code">GitHub</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section with Timeline -->
+    <section id="experience" class="experience" role="region" aria-label="Experience section">
+      <div class="container">
+        <h2 class="section__title">Experience & Education</h2>
+
+        <div class="timeline">
+          <!-- Internship -->
+          <div class="timeline-item fade-in">
+            <div class="timeline-marker">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Cloud Computing Intern</h3>
+              <p class="timeline-date">June 2024 - July 2024</p>
+              <p class="timeline-company">Tecspeak IT Solutions</p>
+              <p class="timeline-description">
+                Gained hands-on experience with cloud infrastructure, learning deployment strategies and cloud-native application development during a one-month intensive internship program.
+              </p>
+              <ul class="timeline-achievements">
+                <li>Learned Oracle Cloud Infrastructure (OCI) fundamentals and deployment</li>
+                <li>Worked on cloud-based application deployments</li>
+                <li>Completed Oracle Cloud Infrastructure 2025 certification</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Education: B.Tech -->
+          <div class="timeline-item fade-in">
+            <div class="timeline-marker">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">B.Tech in Computer Science Engineering</h3>
+              <p class="timeline-date">2022 - 2026</p>
+              <p class="timeline-company">Sharad Institute of Technology, Yadrav</p>
+              <p class="timeline-description">
+                Pursuing degree in Computer Science Engineering with focus on full-stack development, data structures, algorithms, and software engineering principles.
+              </p>
+              <ul class="timeline-achievements">
+                <li>CGPA: 6.5/10.0</li>
+                <li>Completed projects in Java, Python, Web Development, and Database Management</li>
+                <li>NCC Cadet (2021-2023) - Led team activities and participated in Army Attachment Camp at Pune</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Certifications & Achievements -->
+          <div class="timeline-item fade-in">
+            <div class="timeline-marker">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Certifications & Achievements</h3>
+              <p class="timeline-date">2024 - 2025</p>
+              <p class="timeline-company">Professional Development</p>
+              <p class="timeline-description">
+                Actively pursuing professional certifications and building expertise through real-world projects and continuous learning.
+              </p>
+              <ul class="timeline-achievements">
+                <li><strong>Oracle Cloud Infrastructure 2025</strong> - Certified and pursuing advanced certifications</li>
+                <li><strong>Employability Skills</strong> - JobReady Certification for professional development</li>
+                <li><strong>NCC Cadet</strong> (2021-2023) - National Cadet Corps participation with Army Attachment Camp experience</li>
+                <li><strong>JUO Leader</strong> - Junior Under Officer leadership role in college activities</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NCC Section -->
+    <section id="ncc" class="ncc" role="region" aria-label="NCC achievements section">
+      <div class="container">
+        <h2 class="section__title">NCC - National Cadet Corps</h2>
+
+        <!-- NCC Profile Photo -->
+        <div class="ncc__profile-wrapper fade-in">
+          <img src="/Img/Ncc/profile 2.jpg" alt="Pruthviraj - NCC Cadet" class="ncc__profile-photo" />
+        </div>
+
+        <!-- NCC Overview -->
+        <div class="ncc__overview fade-in">
+          <h3 class="ncc__subtitle">2021 - 2023 | Junior Under Officer (JUO)</h3>
+          <p class="ncc__description">
+            As a dedicated NCC cadet, I served with pride in the National Cadet Corps, demonstrating leadership, discipline, and commitment to excellence. My journey included rigorous training, camp experiences, and the opportunity to lead fellow cadets while contributing to nation-building activities.
+          </p>
+        </div>
+
+        <!-- NCC Gallery Grid -->
+        <div class="ncc__gallery">
+          <!-- Certificates Section -->
+          <div class="ncc__category fade-in">
+            <h3 class="ncc__category-title">
+              <i class="fas fa-certificate"></i> Certificates
+            </h3>
+            <div class="ncc__grid">
+              <!-- NCC B Certificate -->
+              <div class="ncc__item">
+                <div class="ncc__image-wrapper">
+                  <img src="/Img/Ncc/b Certificate.jpg" alt="NCC B Certificate" class="ncc__image" loading="lazy" />
+                </div>
+                <p class="ncc__item-label">NCC B Certificate</p>
+              </div>
+
+              <!-- NCC C Certificate -->
+              <div class="ncc__item">
+                <div class="ncc__image-wrapper">
+                  <img src="/Img/Ncc/C certificate.jpg" alt="NCC C Certificate" class="ncc__image" loading="lazy" />
+                </div>
+                <p class="ncc__item-label">NCC C Certificate</p>
+              </div>
+
+              <!-- Army Attachment Camp Certificate -->
+              <div class="ncc__item">
+                <div class="ncc__image-wrapper">
+                  <img src="/Img/Ncc/Arrmy attachment.jpg" alt="Army Attachment Camp Certificate" class="ncc__image" loading="lazy" />
+                </div>
+                <p class="ncc__item-label">Army Attachment Camp</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Memories Section -->
+          <div class="ncc__category fade-in">
+            <h3 class="ncc__category-title">
+              <i class="fas fa-images"></i> Memories & Activities
+            </h3>
+            <div class="ncc__grid">
+              <!-- Memory Photo 1 -->
+              <div class="ncc__item">
+                <div class="ncc__image-wrapper">
+                  <img src="/Img/Ncc/memores 1.jpg" alt="NCC Activity 1" class="ncc__image" loading="lazy" />
+                </div>
+              </div>
+
+              <!-- Memory Photo 2 -->
+              <div class="ncc__item">
+                <div class="ncc__image-wrapper">
+                  <img src="/Img/Ncc/memores 2.jpg" alt="NCC Activity 2" class="ncc__image" loading="lazy" />
+                </div>
+              </div>
+              <div class="ncc__item">
+                <div class="ncc__image-wrapper">
+                  <img src="/Img/Ncc/parade 1.jpg" alt="NCC Activity 3" class="ncc__image" loading="lazy" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Achievements Section -->
+          <div class="ncc__category fade-in">
+            <h3 class="ncc__category-title">
+              <i class="fas fa-medal"></i> Key Achievements
+            </h3>
+            <div class="ncc__achievements">
+              <div class="achievement-card">
+                <div class="achievement-icon">
+                  <i class="fas fa-star"></i>
+                </div>
+                <h4>NCC Cadet</h4>
+                <p>Active member 2021-2023</p>
+              </div>
+
+              <div class="achievement-card">
+                <div class="achievement-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h4>JUO Leader</h4>
+                <p>Junior Under Officer Leadership</p>
+              </div>
+
+              <div class="achievement-card">
+                <div class="achievement-icon">
+                  <i class="fas fa-campground"></i>
+                </div>
+                <h4>Army Attachment</h4>
+                <p>Camp at Pune - Leadership Training</p>
+              </div>
+
+              <div class="achievement-card">
+                <div class="achievement-icon">
+                  <i class="fas fa-certificate"></i>
+                </div>
+                <h4>B & C Certificates</h4>
+                <p>NCC Certification Earned</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section with Form -->
+    <section id="contact" class="contact" role="region" aria-label="Contact section">
+      <div class="container">
+        <h2 class="section__title">Get In Touch</h2>
+
+        <div class="contact__content">
+          <div class="contact__info fade-in">
+            <p class="contact__intro">
+              I'm always interested in hearing about new projects and opportunities. Feel free to reach out!
+            </p>
+
+            <div class="contact-methods">
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                  <h3>Email</h3>
+                  <a href="mailto:pruthvirajdesai204@gmail.com">pruthvirajdesai204@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-details">
+                  <h3>Phone</h3>
+                  <a href="tel:+919322488913">+91 9322488913</a>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h3>Location</h3>
+                  <p>India</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links with Icons -->
+            <div class="contact-socials">
+              <a href="mailto:pruthvirajdesai204@gmail.com" class="social-link" aria-label="Email" target="_blank" rel="noopener noreferrer" title="Email">
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a href="https://github.com/PruthviDev-7" class="social-link" aria-label="GitHub Profile" target="_blank" rel="noopener noreferrer" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://linkedin.com/in/pruthviraj-desai" class="social-link" aria-label="LinkedIn Profile" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://twitter.com/pruthvidesai" class="social-link" aria-label="Twitter Profile" target="_blank" rel="noopener noreferrer" title="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://codepen.io" class="social-link" aria-label="CodePen Profile" target="_blank" rel="noopener noreferrer" title="CodePen">
+                <i class="fab fa-codepen"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form class="contact-form fade-in" id="contactForm" aria-label="Contact form" novalidate>
+            <div class="form-group">
+              <label for="formName" class="form-label">Full Name</label>
+              <input
+                type="text"
+                id="formName"
+                class="form-input"
+                placeholder="Your Name"
+                required
+                aria-required="true"
+              />
+              <span class="form-error" id="formNameError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="formEmail" class="form-label">Email Address</label>
+              <input
+                type="email"
+                id="formEmail"
+                class="form-input"
+                placeholder="your@email.com"
+                required
+                aria-required="true"
+              />
+              <span class="form-error" id="formEmailError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="formSubject" class="form-label">Subject</label>
+              <input
+                type="text"
+                id="formSubject"
+                class="form-input"
+                placeholder="Project Inquiry"
+                required
+                aria-required="true"
+              />
+              <span class="form-error" id="formSubjectError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="formMessage" class="form-label">Message</label>
+              <textarea
+                id="formMessage"
+                class="form-textarea"
+                rows="6"
+                placeholder="Tell me about your project..."
+                required
+                aria-required="true"
+              ></textarea>
+              <span class="form-error" id="formMessageError"></span>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--submit" aria-label="Send message">
+              Send Message
+              <i class="fas fa-paper-plane"></i>
+            </button>
+
+            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__section">
+            <h3>Pruthviraj</h3>
+            <p>Full Stack Developer | Building Digital Experiences</p>
+          </div>
+
+          <div class="footer__section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__section">
+            <h3>Social</h3>
+            <ul>
+              <li><a href="https://github.com/PruthviDev-7" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              <li><a href="https://linkedin.com/in/pruthviraj-desai" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="https://twitter.com/pruthvidesai" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>&copy; 2025 Pruthviraj. Built with <span class="heart">♥</span> using HTML5, CSS3 & JavaScript.</p>
+        </div>
+      </div>
+
+      <!-- Back to Top Button -->
+      <button class="back-to-top" id="backToTop" aria-label="Back to top" role="button">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+      <div class="modal__overlay" id="modalOverlay"></div>
+      <div class="modal__content">
+        <button class="modal__close" id="modalClose" aria-label="Close modal">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <div class="modal__body">
+          <h2 id="modalTitle" class="modal__title"></h2>
+          <img class="modal__image" id="modalImage" alt="" />
+          <p class="modal__description" id="modalDescription"></p>
+          <div class="modal__tech" id="modalTech"></div>
+          <div class="modal__links">
+            <a class="btn btn--primary" id="modalLiveLink" href="#" target="_blank" rel="noopener noreferrer">Live Demo</a>
+            <a class="btn btn--outline" id="modalGithubLink" href="#" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading Overlay (shown during page load) -->
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="spinner"></div>
+      <p>Loading Portfolio...</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js" defer></script>
+    <script>
+      // Register Service Worker for PWA
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('service-worker.js').catch(() => {
+            // Service worker registration failed, app will work without offline support
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
